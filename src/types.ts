@@ -7,3 +7,9 @@ export type Produtos = {
     preco: number;
     estoque: number;
 }
+
+export type Clientes = {
+    id: number;
+    nome: string;
+    email: string;
+}
