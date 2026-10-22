@@ -63,3 +63,16 @@ export const produtoFiltrado = buscarProdutoNome("sam");
 export function buscarProdutoCategoria(categoria: string): Produto[] {
     return produtos.filter(produto => produto.categoria === categoria);
 }
+
+//cadastrar novos produtos no sistema.
+export function cadastrarProduto(produto: Produto): boolean {
+    const produtoJaCadastrado = buscarProdutoId(produto.id);
+    if (produtoJaCadastrado) {
+        console.log(`O produto que está tentando cadastrar já existe no sistema. Por favor, tente novamente!`);
+        return false;
+    }
+    produtos.push(produto);
+    console.log(`Um novo Produto foi cadastrado com sucesso!`);
+    return true;
+}
+
