@@ -26,3 +26,9 @@ export const produtos: Produtos[] = [
     },
     
 ]
+
+export function listarProdutos(): void {
+    for (const produto of produtos) {
+        console.log(`Id: ${produto.id}, Descrição: ${produto.nome}, Categoria: ${produto.categoria}, Valor: R$ ${produto.preco}, Estoque Disponível: ${produto.estoque} und.`);
+    }
+}
