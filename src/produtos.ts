@@ -72,7 +72,7 @@ export function cadastrarProduto(produto: Produto): boolean {
         return false;
     }
     produtos.push(produto);
-    console.log(`Um novo Produto foi cadastrado com sucesso!`);
+    console.log(`Produto foi cadastrado com sucesso!`);
     return true;
 }
 
