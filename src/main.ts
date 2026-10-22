@@ -1,4 +1,8 @@
-import {listarProdutos, buscarProdutoId, buscarProdutoNome, produtoFiltrado} from "./produtos";
+import {listarProdutos, 
+        buscarProdutoId, 
+        buscarProdutoNome, 
+        produtoFiltrado, 
+        buscarProdutoCategoria} from "./produtos";
 import {Produto} from "./types";
 
 console.log("------Sistema de Gerenciamento de Ecommerce------");
@@ -12,5 +16,8 @@ const produtoId = buscarProdutoId(3); //vai trazer o produto que possui o Id esc
         console.log(produtoId);
     }
 
-console.log("\n O produto buscado pela seguinte descrição é: ")
+console.log("\n O produto buscado pela seguinte descrição é: ");
 console.log(produtoFiltrado);
+
+console.log("\n O produto buscado de acordo com sua categoria é: ");
+console.log(buscarProdutoCategoria("Linha Branca"));

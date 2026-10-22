@@ -31,10 +31,12 @@ export const produtos: Produto[] = [
 
 
 //tras a lista dos produtos cadastrados no sistema.
-export function listarProdutos(): void {
+export function listarProdutos(): Produto[] {
     for (const produto of produtos) {
         console.log(`Id: ${produto.id}, Descrição: ${produto.nome}, Categoria: ${produto.categoria}, Valor: R$ ${produto.preco},00 , Estoque Disponível: ${produto.estoque} und.`);
+    
     }
+    return produtos;
 }
 
 //busca um produto pelo seu id cadastrado no sistema.
@@ -42,9 +44,15 @@ export function buscarProdutoId(id: number): Produto | undefined {
     return produtos.find(produto => produto.id === id);
 }
 
+
+//busca o produto de acordo com uma parte do descritivo/nome do produto.
 export function buscarProdutoNome(nome: string): Produto[] {
   const buscarCaracteres = nome.toLowerCase();
   return produtos.filter(produto => produto.nome.toLowerCase().includes(buscarCaracteres));
 }
 
 export const produtoFiltrado = buscarProdutoNome("sam");
+
+export function buscarProdutoCategoria(categoria: string): Produto | undefined {
+    return produtos.find(produto => produto.categoria === categoria);
+}
