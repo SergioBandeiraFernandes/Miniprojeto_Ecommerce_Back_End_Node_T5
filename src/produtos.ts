@@ -2,6 +2,8 @@ import type { Produtos } from "./types";
 
 import type { Categoria } from "./types";
 
+
+//lista de produtos cadastrados no sistema.
 export const produtos: Produtos[] = [
     {
         id: 1,
@@ -27,8 +29,15 @@ export const produtos: Produtos[] = [
     
 ]
 
+
+//tras a lista dos produtos cadastrados no sistema.
 export function listarProdutos(): void {
     for (const produto of produtos) {
-        console.log(`Id: ${produto.id}, Descrição: ${produto.nome}, Categoria: ${produto.categoria}, Valor: R$ ${produto.preco}, Estoque Disponível: ${produto.estoque} und.`);
+        console.log(`Id: ${produto.id}, Descrição: ${produto.nome}, Categoria: ${produto.categoria}, Valor: R$ ${produto.preco},00 , Estoque Disponível: ${produto.estoque} und.`);
     }
+}
+
+//busca um produto pelo seu id cadastrado no sistema.
+export function buscarProdutoId(id: number): Produtos | undefined {
+    return produtos.find(produto => produto.id === id);
 }
