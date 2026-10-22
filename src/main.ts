@@ -1,5 +1,5 @@
-import {listarProdutos, buscarProdutoId} from "./produtos";
-import {Produtos} from "./types";
+import {listarProdutos, buscarProdutoId, buscarProdutoNome, produtoFiltrado} from "./produtos";
+import {Produto} from "./types";
 
 console.log("------Sistema de Gerenciamento de Ecommerce------");
 
@@ -11,3 +11,6 @@ const produtoId = buscarProdutoId(3); //vai trazer o produto que possui o Id esc
     if (produtoId !== undefined) {
         console.log(produtoId);
     }
+
+console.log("\n O produto buscado pela seguinte descrição é: ")
+console.log(produtoFiltrado);

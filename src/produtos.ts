@@ -1,10 +1,10 @@
-import type { Produtos } from "./types";
+import type { Produto } from "./types";
 
 import type { Categoria } from "./types";
 
 
 //lista de produtos cadastrados no sistema.
-export const produtos: Produtos[] = [
+export const produtos: Produto[] = [
     {
         id: 1,
         nome: "Notebook Dell Latitude 5420",
@@ -38,6 +38,13 @@ export function listarProdutos(): void {
 }
 
 //busca um produto pelo seu id cadastrado no sistema.
-export function buscarProdutoId(id: number): Produtos | undefined {
+export function buscarProdutoId(id: number): Produto | undefined {
     return produtos.find(produto => produto.id === id);
 }
+
+export function buscarProdutoNome(nome: string): Produto[] {
+  const buscarCaracteres = nome.toLowerCase();
+  return produtos.filter(produto => produto.nome.toLowerCase().includes(buscarCaracteres));
+}
+
+export const produtoFiltrado = buscarProdutoNome("sam");

@@ -1,6 +1,6 @@
 export type Categoria = "TI" | "Linha Marrom" | "Linha Branca";
 
-export type Produtos = {
+export type Produto = {
     id: number;
     nome: string;
     categoria: Categoria;
