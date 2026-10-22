@@ -26,7 +26,13 @@ export const produtos: Produto[] = [
         preco: 1500,
         estoque: 4
     },
-    
+    {
+        id: 4,
+        nome: "Fogão Electrolux 4 bocas",
+        categoria: "Linha Branca",
+        preco: 800,
+        estoque: 6
+    },
 ]
 
 
@@ -53,6 +59,7 @@ export function buscarProdutoNome(nome: string): Produto[] {
 
 export const produtoFiltrado = buscarProdutoNome("sam");
 
-export function buscarProdutoCategoria(categoria: string): Produto | undefined {
-    return produtos.find(produto => produto.categoria === categoria);
+//busca o produto de acordo com a categoria que está pesquisando.
+export function buscarProdutoCategoria(categoria: string): Produto[] {
+    return produtos.filter(produto => produto.categoria === categoria);
 }
