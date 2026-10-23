@@ -37,12 +37,11 @@ export const produtos: Produto[] = [
 
 
 //tras a lista dos produtos cadastrados no sistema.
-export function listarProdutos(): Produto[] {
+export function listarProdutos(): void {
     for (const produto of produtos) {
         console.log(`Id: ${produto.id}, Descrição: ${produto.nome}, Categoria: ${produto.categoria}, Valor: R$ ${produto.preco},00 , Estoque Disponível: ${produto.estoque} und.`);
     
     }
-    return produtos;
 }
 
 //busca um produto pelo seu id cadastrado no sistema.
@@ -74,4 +73,23 @@ export function cadastrarProduto(produto: Produto): boolean {
     produtos.push(produto);
     console.log(`Produto foi cadastrado com sucesso!`);
     return true;
+}
+
+//atualiza o produto cadastrado no sistema.
+export function atualizarProduto(id: number, novosDados: Partial<Produto>): Produto | null {
+    const index = produtos.findIndex(p => p.id === id);
+
+    if (index === -1) {
+        console.log(`Produto com ID ${id} não foi encontrado.`);
+        return null;
+    }
+
+    // Mescla os dados e força a tipagem com 'as Produto' para satisfazer o TypeScript
+    produtos[index] = {
+        ...produtos[index],
+        ...novosDados,
+        id 
+    } as Produto;
+
+    return produtos[index];
 }

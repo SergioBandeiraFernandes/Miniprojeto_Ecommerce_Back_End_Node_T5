@@ -3,7 +3,8 @@ import {listarProdutos,
         buscarProdutoNome, 
         produtoFiltrado, 
         buscarProdutoCategoria,
-        cadastrarProduto} from "./produtos";
+        cadastrarProduto,
+        atualizarProduto} from "./produtos";
 import {Produto} from "./types";
 
 console.log("------Sistema de Gerenciamento de Ecommerce------");
@@ -34,4 +35,15 @@ const NovoProduto = cadastrarProduto({
 });
 //console.log(NovoProduto ? "Produto cadastrado com sucesso!" : "Produto já cadastrado no sistema.");
 console.log("\nSendo assim, segue a lista atualizada de produtos cadastrados no sistema:");
-console.log(listarProdutos()); 
+listarProdutos(); 
+
+//Atualizar o produto que já está cadastrado no sistema.
+const resultado = atualizarProduto(1, { 
+    preco: 1250, 
+    estoque: 1
+});
+
+console.log("\nProduto Atualizado:", resultado);
+console.log("\n -------- Lista do Estoque Atualizada --------\n");
+listarProdutos(); // Lista atualizada após a atualização do produto.
+
