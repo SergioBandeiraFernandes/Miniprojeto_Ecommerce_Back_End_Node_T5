@@ -75,4 +75,3 @@ export function cadastrarProduto(produto: Produto): boolean {
     console.log(`Produto foi cadastrado com sucesso!`);
     return true;
 }
-
