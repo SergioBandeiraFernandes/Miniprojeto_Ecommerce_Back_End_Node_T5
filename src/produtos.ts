@@ -84,6 +84,19 @@ export function atualizarProduto(id: number, novosDados: Partial<Produto>): Prod
         return null;
     }
 
+    // Validação para impedir valor negativo
+    if (novosDados.preco !== undefined && novosDados.preco < 0) {
+        console.log("\nAtenção: O valor do produto não pode ser negativo.");
+        return null;
+    }
+
+    // Validação para impedir estoque negativo 
+    // (Nota: se no seu tipo Produto o campo se chamar 'quantidade', substitua 'estoque' por 'quantidade')
+    if (novosDados.estoque !== undefined && novosDados.estoque < 0) {
+        console.log("\nAtenção: O estoque do produto não pode ser negativo.");
+        return null;
+    }
+
     // Mescla os dados e força a tipagem com 'as Produto' para satisfazer o TypeScript
     produtos[index] = {
         ...produtos[index],
@@ -91,5 +104,8 @@ export function atualizarProduto(id: number, novosDados: Partial<Produto>): Prod
         id 
     } as Produto;
 
+    console.log(`Produto com ID ${id} atualizado com sucesso.`);
     return produtos[index];
 }
+
+//
