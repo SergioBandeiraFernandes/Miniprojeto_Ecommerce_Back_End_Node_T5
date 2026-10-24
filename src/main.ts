@@ -22,6 +22,8 @@ import {
 import {
         adicionarAoCarrinho,
         calcularValorTotalCarrinho,
+        deletarProdutoCarrinho,
+        listarCarrinho,
         } from "./carrinhos";
 
 
@@ -128,5 +130,12 @@ adicionarAoCarrinho(2, 2, 4, 1);
 
 //Exibe o valor total do carrinho do cliente 2:
 const totalCliente2 = calcularValorTotalCarrinho(2);
-console.log(`Valor total de R$ ${totalCliente2}`);
+console.log(`Valor total de R$ ${totalCliente2}\n`);
 
+//Removendo item do carrinho.
+console.log("\n--- Removendo item do carrinho ---");
+deletarProdutoCarrinho(5);
+
+//mostrar itens carrinho atualizado
+console.log("\nO carrinho teve os seguintes itens atualizados:");
+listarCarrinho();

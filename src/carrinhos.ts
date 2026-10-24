@@ -53,14 +53,14 @@ export function adicionarAoCarrinho(carrinhoId: number, clienteId: number, produ
         CarrinhoId: carrinhoId,
         clienteId: clienteId,
         ProdutoId: produtoId,
-        quantidade: quantidade
+        quantidade: quantidade,
     };
 
     // Adiciona o item ao carrinho
     carrinho.push(novoItem);
-    console.log(`Id: ${produto.id} - "${produto.nome}" adicionado com sucesso para o cliente ID - ${clienteId}!. Para esse cliente o carrinho está com: `);
+    console.log(`Id: ${produto.id} - "${produto.nome}" - quantidade: ${novoItem.quantidade} adicionado com sucesso para o cliente ID - ${clienteId}!. Para esse cliente o carrinho está com: `);
     return true;
-}
+};
 
 // Calcula o subtotal de um item específico do carrinho
 export function calcularSubtotalItem(item: Box): number {
@@ -68,7 +68,7 @@ export function calcularSubtotalItem(item: Box): number {
     if (!produto) return 0;
 
     return item.quantidade * produto.preco;
-}
+};
 
 // Calcular o valor total do carrinho
 export function calcularValorTotalCarrinho(clienteId?: number): number {
@@ -80,4 +80,33 @@ export function calcularValorTotalCarrinho(clienteId?: number): number {
         }
     }
     return valorTotal;
-}
+};
+
+//remover um produto do carrinho.
+export function deletarProdutoCarrinho(idParaRemoverItemCarrinho: number): void {
+    const index = carrinho.findIndex(item => item.ProdutoId === idParaRemoverItemCarrinho);
+
+    if (index !== -1) {
+        // Se encontrou o índice, remove o item
+        carrinho.splice(index, 1);
+        console.log(`Produto ID ${idParaRemoverItemCarrinho} removido com sucesso.`);
+    } else {
+        // Se não encontrou, apenas avisa no console
+        console.log(`Produto com ID ${idParaRemoverItemCarrinho} não encontrado.`);
+    }
+};
+
+//listar itens que constam no carrinho
+export function listarCarrinho(): void {
+    if (carrinho.length === 0) {
+        console.log("O carrinho está vazio!");
+        return;
+    }
+    for (const item of carrinho){
+        const produto = buscarProdutoId(item.ProdutoId);
+        const nomeProduto = produto ? produto.nome : "Produto não encontrado";
+        const valorTotalCliente = calcularValorTotalCarrinho(item.clienteId);
+        
+        console.log(`Id: ${item.ProdutoId} - "${nomeProduto}", Quantidade: ${item.quantidade}, CarrinhoId: ${item.CarrinhoId}, Cliente ID - ${item.clienteId}, Valor Total do Cliente: R$ ${valorTotalCliente}.`);
+    }
+};
