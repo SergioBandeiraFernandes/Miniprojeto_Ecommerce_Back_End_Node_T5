@@ -51,10 +51,16 @@ export function buscarClienteId(id: number): Clientes | undefined {
     return clientes.find(clientes => clientes.id === id);
 }
 
-//Cadastra um novo cliente.
+//Busca o cliente por um e-mail informado.
+export function buscarClienteEmail(email: string): Clientes | undefined {
+    return clientes.find(clientes => clientes.email === email);
+}
+
+//Cadastra um novo cliente. Valida também se o ID ou o e-mail já estão cadastrados.
 export function cadastrarClientes(novoCliente: Clientes): boolean {
-    const clienteJaCadastrado = buscarClienteId(novoCliente.id);
-    if (clienteJaCadastrado) {
+    const clienteJaCadastradoId = buscarClienteId(novoCliente.id);
+    const clienteJaCadastradoEmail = buscarClienteEmail(novoCliente.email);
+    if (clienteJaCadastradoId || clienteJaCadastradoEmail) {
         console.log(`O cliente informado já está cadastrado no sistema!`);
         return false;
     }

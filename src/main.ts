@@ -62,9 +62,11 @@ deletarProdutoPorId(3);
 console.log("\n -------- Lista do Estoque Atualizada --------\n");
 listarProdutos();
 
-//até aqui foi execução do código referente ao arquivo produtos.
+//até aqui foi execução do código referente ao arquivo produtos.ts.
 
 //------------------------------------------------------------------------------
+
+//Inicio de execução do código  referente ao arquivo clientes.ts
 
 //Listar os cliente que tem no banco de daods.
 console.log("\n ------------- Lista de Clientes no Sistema -------------\n");
@@ -75,8 +77,8 @@ console.log("\n------ Cadastrando novo cliente no sistema ------ \n");
 console.log("\nO cliente que está sendo cadastrado tem o seguinte status: ");
 const novoCliente = cadastrarClientes({
     id: 8,
-    nome: "Mateus",
-    email: "mateus@example.com"
+    nome: "Giovanna Dias Fernandes",
+    email: "giovanna.dias@example.com"
 });
 
 console.log("\nSendo assim, segue a lista atualizada de clientes cadastrados no sistema:");
