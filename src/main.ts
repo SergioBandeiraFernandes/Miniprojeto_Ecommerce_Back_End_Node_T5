@@ -50,6 +50,6 @@ listarProdutos(); // Lista atualizada após a atualização do produto.
 
 // Remover um produto do sistema através do id informado.
 console.log("\n-------------- Execução de Remoção de Produto do Estoque --------------\n");
-deletarProdutoPorId(2);
+deletarProdutoPorId(3);
 console.log("\n -------- Lista do Estoque Atualizada --------\n");
 listarProdutos();
