@@ -1,12 +1,20 @@
-import {listarProdutos, 
+import {Produto} from "./types";
+import {
+        listarProdutos, 
         buscarProdutoId, 
         buscarProdutoNome, 
         produtoFiltrado, 
         buscarProdutoCategoria,
         cadastrarProduto,
         atualizarProduto,
-        deletarProdutoPorId} from "./produtos";
-import {Produto} from "./types";
+        deletarProdutoPorId
+        } from "./produtos";
+import {
+        listarClientes,
+        cadastrarClientes,
+        buscarClienteId,
+        } from "./clientes";
+
 
 console.log("------Sistema de Gerenciamento de Ecommerce------");
 
@@ -53,3 +61,30 @@ console.log("\n-------------- Execução de Remoção de Produto do Estoque ----
 deletarProdutoPorId(3);
 console.log("\n -------- Lista do Estoque Atualizada --------\n");
 listarProdutos();
+
+//até aqui foi execução do código referente ao arquivo produtos.
+
+//------------------------------------------------------------------------------
+
+//Listar os cliente que tem no banco de daods.
+console.log("\n ------------- Lista de Clientes no Sistema -------------\n");
+listarClientes();
+
+//Cadastrar novo cliente.
+console.log("\n------ Cadastrando novo cliente no sistema ------ \n");
+console.log("\nO cliente que está sendo cadastrado tem o seguinte status: ");
+const novoCliente = cadastrarClientes({
+    id: 8,
+    nome: "Mateus",
+    email: "mateus@example.com"
+});
+
+console.log("\nSendo assim, segue a lista atualizada de clientes cadastrados no sistema:");
+listarClientes();
+
+//buscar um cliente pelo id.
+console.log("\n O cliente buscado pelo seu Id é:");
+const clienteBuscado = buscarClienteId(5); 
+    if (clienteBuscado !== undefined) {
+        console.log(clienteBuscado);
+    }

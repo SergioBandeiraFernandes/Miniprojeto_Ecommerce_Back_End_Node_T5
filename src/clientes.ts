@@ -37,3 +37,28 @@ export const clientes: Clientes[] = [
         email: "samuel.bandeira@example.com"
     },
 ]
+
+//Listar todos os clientes que tem no sistema.
+export function listarClientes(): void {
+    for (const cliente of clientes) {
+        console.log(`Id: ${cliente.id}, nome: ${cliente.nome}, email: ${cliente.email}`);
+    
+    }
+}
+
+//Busca o cliente por uma ID informada.
+export function buscarClienteId(id: number): Clientes | undefined {
+    return clientes.find(clientes => clientes.id === id);
+}
+
+//Cadastra um novo cliente.
+export function cadastrarClientes(novoCliente: Clientes): boolean {
+    const clienteJaCadastrado = buscarClienteId(novoCliente.id);
+    if (clienteJaCadastrado) {
+        console.log(`O cliente informado já está cadastrado no sistema!`);
+        return false;
+    }
+    clientes.push(novoCliente);
+    console.log(`Cliente foi cadastrado com sucesso!`);
+    return true;
+}
