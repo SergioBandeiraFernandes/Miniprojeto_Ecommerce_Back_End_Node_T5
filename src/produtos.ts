@@ -108,4 +108,16 @@ export function atualizarProduto(id: number, novosDados: Partial<Produto>): Prod
     return produtos[index];
 }
 
-//
+//remover um produto com a id solicitada.
+export function deletarProdutoPorId(idParaRemover: number): void {
+    const index = produtos.findIndex(produto => produto.id === idParaRemover);
+
+    if (index !== -1) {
+        // Se encontrou o índice, remove o item
+        produtos.splice(index, 1);
+        console.log(`Produto ID ${idParaRemover} removido com sucesso.`);
+    } else {
+        // Se não encontrou, apenas avisa no console
+        console.log(`Produto com ID ${idParaRemover} não encontrado.`);
+    }
+}

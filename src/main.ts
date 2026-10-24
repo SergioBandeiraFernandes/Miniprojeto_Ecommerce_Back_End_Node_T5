@@ -4,7 +4,8 @@ import {listarProdutos,
         produtoFiltrado, 
         buscarProdutoCategoria,
         cadastrarProduto,
-        atualizarProduto} from "./produtos";
+        atualizarProduto,
+        deletarProdutoPorId} from "./produtos";
 import {Produto} from "./types";
 
 console.log("------Sistema de Gerenciamento de Ecommerce------");
@@ -47,3 +48,8 @@ console.log("\nProduto Atualizado:", resultado);
 console.log("\n -------- Lista do Estoque Atualizada --------\n");
 listarProdutos(); // Lista atualizada após a atualização do produto.
 
+// Remover um produto do sistema através do id informado.
+console.log("\n-------------- Execução de Remoção de Produto do Estoque --------------\n");
+deletarProdutoPorId(2);
+console.log("\n -------- Lista do Estoque Atualizada --------\n");
+listarProdutos();
