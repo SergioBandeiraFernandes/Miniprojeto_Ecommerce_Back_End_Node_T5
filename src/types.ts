@@ -13,3 +13,10 @@ export type Clientes = {
     nome: string;
     email: string;
 }
+
+export type Box = {
+    CarrinhoId: number;
+    clienteId: number;
+    ProdutoId: number;
+    quantidade: number;
+}

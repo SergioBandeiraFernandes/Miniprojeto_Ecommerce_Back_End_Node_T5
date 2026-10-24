@@ -1,4 +1,7 @@
 import {Produto} from "./types";
+
+import { Box } from './types';
+
 import {
         listarProdutos, 
         buscarProdutoId, 
@@ -9,11 +12,19 @@ import {
         atualizarProduto,
         deletarProdutoPorId
         } from "./produtos";
+
 import {
         listarClientes,
         cadastrarClientes,
         buscarClienteId,
         } from "./clientes";
+
+import {
+        adicionarAoCarrinho,
+        calcularValorTotalCarrinho,
+        } from "./carrinhos";
+
+
 
 
 console.log("------Sistema de Gerenciamento de Ecommerce------");
@@ -90,3 +101,32 @@ const clienteBuscado = buscarClienteId(5);
     if (clienteBuscado !== undefined) {
         console.log(clienteBuscado);
     }
+
+//até aqui foi execução do código referente ao arquivo clientes.ts
+
+//----------------------------------------------------------------
+
+//Inicio de execução do código  referente ao arquivo carrinhos.ts
+
+//Adicionando item ao carrinho.
+console.log("\n------ Carrinho ------ \n");
+console.log("\nO carrinho tem os seguintes itens: ");
+
+// 1. Adiciona o primeiro produto para o cliente 1 (Sérgio)
+adicionarAoCarrinho(1, 1, 5, 3);
+//1º indice é Id do carrinho
+//2º indice é Id Cliente
+//3º indice é Id Produto
+//4º indice é quantidade
+//Exibe o valor total do carrinho do cliente 1:
+const totalCliente1 = calcularValorTotalCarrinho(1);
+console.log(`Valor total de R$ ${totalCliente1}\n`);
+
+
+// 2. Adiciona um primeiro produto para o mesmo cliente 2:
+adicionarAoCarrinho(2, 2, 4, 1);
+
+//Exibe o valor total do carrinho do cliente 2:
+const totalCliente2 = calcularValorTotalCarrinho(2);
+console.log(`Valor total de R$ ${totalCliente2}`);
+
