@@ -27,6 +27,11 @@ import {
         atualizarQuantidadeCarrinho,
         } from "./carrinhos";
 
+import {finalizarPedidoCarrinho,
+        listarTodosPedidos,
+        buscarPedidoPorClienteId,
+        } from "./pedidos";
+
 
 
 
@@ -154,3 +159,16 @@ listarCarrinho();
 //----------------------------------------------------------------
 
 //Inicio de execução do código referente ao arquivo pedidos.ts
+
+//Finalizar Pedido do cliente
+console.log("\n---- Status do Pedido -----\n")
+finalizarPedidoCarrinho(2);
+
+//Consultar todos os Pedidos que foram registrados.
+console.log("-------------------- Registro de Pedidos -------------------------");
+console.log("\nSeguem os Registro de Pedidos:\n");
+listarTodosPedidos();
+
+//Consultar o Pedido de acordo com o Id do Cliente.
+console.log("Pedido do cliente informado é: ")
+console.log(buscarPedidoPorClienteId(2));

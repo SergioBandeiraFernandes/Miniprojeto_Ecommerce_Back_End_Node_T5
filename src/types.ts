@@ -28,7 +28,7 @@ export type Pedido = {
         idProduto: number;
         nomeProduto: string;
         quantidadeCarrinho: number;
-    }
+    }[];
     TotalPedido: number;
     dataPedido: Date;
     }
