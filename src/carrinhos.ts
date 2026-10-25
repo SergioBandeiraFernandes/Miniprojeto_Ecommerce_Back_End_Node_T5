@@ -58,7 +58,7 @@ export function adicionarAoCarrinho(carrinhoId: number, clienteId: number, produ
 
     // Adiciona o item ao carrinho
     carrinho.push(novoItem);
-    console.log(`Id: ${produto.id} - "${produto.nome}" - quantidade: ${novoItem.quantidade} adicionado com sucesso para o cliente ID - ${clienteId}!. Para esse cliente o carrinho está com: `);
+    console.log(`CarrinhoId: ${carrinhoId} tem como seguinte item: Id: ${produto.id} - "${produto.nome}" - quantidade: ${novoItem.quantidade} adicionado com sucesso para o cliente ID - ${clienteId}!. Para esse cliente o carrinho está com: `);
     return true;
 };
 
@@ -107,7 +107,7 @@ export function listarCarrinho(): void {
         const nomeProduto = produto ? produto.nome : "Produto não encontrado";
         const valorTotalCliente = calcularValorTotalCarrinho(item.clienteId);
         
-        console.log(`Id: ${item.ProdutoId} - "${nomeProduto}", Quantidade: ${item.quantidade}, CarrinhoId: ${item.CarrinhoId}, Cliente ID - ${item.clienteId}, Valor Total do Cliente: R$ ${valorTotalCliente}.`);
+        console.log(`CarrinhoId: ${item.CarrinhoId} tem como seguinte item: Id: ${item.ProdutoId} - "${nomeProduto}", Quantidade: ${item.quantidade} para o Cliente ID - ${item.clienteId}! Para esse cliente o carrinho está com o Valor Total de: R$ ${valorTotalCliente}.`);
     }
 };
 

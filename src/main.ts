@@ -148,3 +148,9 @@ atualizarQuantidadeCarrinho(2, 4, 1);
 console.log("\n------ Atualizando carrinho ------")
 console.log("\nO carrinho teve os seguintes itens atualizados:");
 listarCarrinho();
+
+//até aqui foi execução do código referente ao arquivo carrinhos.ts
+
+//----------------------------------------------------------------
+
+//Inicio de execução do código referente ao arquivo pedidos.ts

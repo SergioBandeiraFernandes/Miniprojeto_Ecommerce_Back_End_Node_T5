@@ -1,0 +1,1 @@
+import { Pedido } from "./types";

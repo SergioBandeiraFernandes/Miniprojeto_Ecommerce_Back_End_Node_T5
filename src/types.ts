@@ -20,3 +20,15 @@ export type Box = {
     ProdutoId: number;
     quantidade: number;
 }
+
+export type Pedido = {
+    id: number;
+    clienteId: number;
+    itens:  {
+        idProduto: number;
+        nomeProduto: string;
+        quantidadeCarrinho: number;
+    }
+    TotalPedido: number;
+    dataPedido: Date;
+    }
