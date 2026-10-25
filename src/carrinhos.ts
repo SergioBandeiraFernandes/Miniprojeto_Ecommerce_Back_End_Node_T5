@@ -110,3 +110,32 @@ export function listarCarrinho(): void {
         console.log(`Id: ${item.ProdutoId} - "${nomeProduto}", Quantidade: ${item.quantidade}, CarrinhoId: ${item.CarrinhoId}, Cliente ID - ${item.clienteId}, Valor Total do Cliente: R$ ${valorTotalCliente}.`);
     }
 };
+
+//alterar a quantidade de um produto no carrinho de um cliente.
+export function atualizarQuantidadeCarrinho(clienteId: number, produtoId: number, novaQuantidade: number): boolean {
+    //valida se o produto existe no sistema
+    const produto = buscarProdutoId(produtoId);
+    if (!produto) {
+        console.log("Produto não encontrado no sistema.");
+        return false;
+    }
+
+    //valida se há estoque suficiente para a nova quantidade
+    if (produto.estoque < novaQuantidade) {
+        console.log(`Estoque insuficiente. Estoque disponível: ${produto.estoque}`);
+        return false;
+    }
+
+    //procura o item no carrinho correspondente ao cliente e ao produto
+    const itemCarrinho = carrinho.find(item => item.clienteId === clienteId && item.ProdutoId === produtoId);
+
+    if (!itemCarrinho) {
+        console.log("Produto não encontrado no carrinho para este cliente.");
+        return false;
+    }
+
+    //atualiza a quantidade do item
+    itemCarrinho.quantidade = novaQuantidade;
+    console.log(`Quantidade do produto ID ${produtoId} atualizada para ${novaQuantidade} com sucesso para o cliente ID ${clienteId}.`);
+    return true;
+}
