@@ -12,23 +12,23 @@ O objetivo da aplicação é simular o banco de dados de um e-commerce fazendo c
 
 ## ✨ Funcionalidades
 
-- [x] Funcionalidade 1 (ex: apresentação do itens em estoque)
-- [x] Funcionalidade 2 (ex: buscar produto por seu ID e categoria)
-- [x] Funcionalidade 3 (ex: cadastrar novos produtos - informar se já tem produto cadastrado)
-- [x] Funcionalidade 4 (ex: atualização de produtos, seja valor ou quantidade)
-- [x] Funcionalidade 5 (ex: remover produtos)
-- [x] Funcionalidade 6 (ex: apresentar clientes cadastrados no sistema)
-- [x] Funcionalidade 7 (ex: cadastrar novos clientes)
-- [x] Funcionalidade 8 (ex: buscar cliente pelo seu ID)
-- [x] Funcionalidade 9 (ex: adicionar itens ao carrinhos referenciado seu ID e o ID do Cliente)
-- [x] Funcionalidade 10 (ex: Apresentar o valor total do cliente no carrinho)
-- [x] Funcionalidade 11 (ex: remover itens do carrinho)
-- [x] Funcionalidade 12 (ex: atualizar item no carrinho)
-- [x] Funcionalidade 13 (ex: mostrar atualização do carrinho)
-- [x] Funcionalidade 14 (ex: Finalizar Pedido do cliente)
-- [x] Funcionalidade 15 (ex: consultar todos os Pedidos Registrados)
-- [x] Funcionalidade 16 (ex: consultar Pedido através do ID do cliente)
-- [x] Funcionalidade 17 (ex: atualizar o estoque após a finalização do Pedido)
+- [x] Funcionalidade 1 apresentação do itens em estoque
+- [x] Funcionalidade 2 buscar produto por seu ID e categoria
+- [x] Funcionalidade 3 cadastrar novos produtos - informar se já tem produto cadastrado
+- [x] Funcionalidade 4 atualização de produtos, seja valor ou quantidade
+- [x] Funcionalidade 5 remover produtos
+- [x] Funcionalidade 6 apresentar clientes cadastrados no sistema
+- [x] Funcionalidade 7 cadastrar novos clientes
+- [x] Funcionalidade 8 buscar cliente pelo seu ID
+- [x] Funcionalidade 9 adicionar itens ao carrinhos referenciado seu ID e o ID do Cliente
+- [x] Funcionalidade 10 apresentar o valor total do cliente no carrinho
+- [x] Funcionalidade 11 remover itens do carrinho
+- [x] Funcionalidade 12 atualizar item no carrinho
+- [x] Funcionalidade 13 mostrar atualização do carrinho
+- [x] Funcionalidade 14 finalizar Pedido do cliente
+- [x] Funcionalidade 15 consultar todos os Pedidos Registrados
+- [x] Funcionalidade 16 consultar Pedido através do ID do cliente
+- [x] Funcionalidade 17 atualizar o estoque após a finalização do Pedido
 
 ---
 
@@ -44,12 +44,12 @@ O objetivo da aplicação é simular o banco de dados de um e-commerce fazendo c
 
 Miniprojeto_Ecommerce-Back_End_Node_T5
 ├── 📁 src/
-│   ├── carrinho.ts/
-│   ├── cliente.ts/
+│   ├── carrinho.ts
+│   ├── cliente.ts
 │   ├── main.ts      # Execução conjunta de toda a funcionalidade do projeto (JavasScript / TypeScrip)
 │   ├── pedidos.ts   # Execução de Pedidos (JavaScript / TypeScript)
 │   ├── produtos.ts  # Execução de Produtos (JavaScript / TypeScript)
-│   ├──types.ts      # Criação das tipagens para executar cada arquivo mencionado anteriormente
+│   ├── types.ts      # Criação das tipagens para executar cada arquivo mencionado anteriormente
 ├── .gitignore       # Arquivos/pastas ignorados pelo Git
 ├── tsconfig.json    # Configuração para a execução do projeto para TypeScript em JavasScript
 
@@ -65,19 +65,19 @@ Miniprojeto_Ecommerce-Back_End_Node_T5
 
 ## ⚙️ Instruções de Execução
 
-`` Bash
+``` Bash
 # 1. Clone este repositorio
-$ git clone [https://github.com/SergioBandeiraFernandes/Miniprojeto_Ecommerce_Back_End_Node_T5]
+$ git clone https://github.com/SergioBandeiraFernandes/Miniprojeto_Ecommerce_Back_End_Node_T5
 
 # 2. Acessa a pasta do projeto no terminal
-$ cd seu-repositorio
+$ cd Miniprojeto_Ecommerce_Back_End_Node_T5
 
 # 3. Instale as dependências
 $ npm install
 
 # 4. Execute a aplicação
 $ npm start
-
+``` 
 ---
 
 ## 💡 Exemplos das Principais Operações
@@ -176,9 +176,11 @@ export function listarTodosPedidos(): void {
 
 ---
 
+## ⚠️ Limitações Conhecidas
 
-
-
+* **Funcionalidade referente a descontos fora do escopo atual de aplicação
+* **Funcionalidade referente ao Processamento de pagamento e emissão de nota também não se aplica a ese projeto
+* **Funcionalidade de Banco de Dados quanto a produtos, clientes, carrinho e Pedidos são armazenados em arrays, pois também não se aplica a esse projeto inicialmente
 
 
 
