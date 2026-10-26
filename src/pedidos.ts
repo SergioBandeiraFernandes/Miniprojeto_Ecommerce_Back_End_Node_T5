@@ -1,6 +1,7 @@
 import { Pedido } from "./types";
 
 import {
+    produtos,
     buscarProdutoId,
 } from "./produtos"
 
@@ -32,6 +33,14 @@ export function finalizarPedidoCarrinho(clienteId: number): Pedido | null {
             quantidadeCarrinho: item.quantidade
         };
     });
+    //Atualizar o estoque de produtos após o pedido ser finalizado.
+    for (const item of itensPedido){
+        const produtoCadastrado = produtos.find(prd => prd.id === item.idProduto);
+        if(produtoCadastrado){
+            produtoCadastrado.estoque -= item.quantidadeCarrinho;
+        }
+    }
+    //
     const valorTotalPedido = calcularValorTotalCarrinho(clienteId);
 
     const novoPedido: Pedido = {

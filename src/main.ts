@@ -61,7 +61,6 @@ const NovoProduto = cadastrarProduto({
     preco: 2500,
     estoque: 8
 });
-//console.log(NovoProduto ? "Produto cadastrado com sucesso!" : "Produto já cadastrado no sistema.");
 console.log("\nSendo assim, segue a lista atualizada de produtos cadastrados no sistema:");
 listarProdutos(); 
 
@@ -132,7 +131,7 @@ console.log(`Valor total de R$ ${totalCliente1}\n`);
 
 
 // 2. Adiciona um primeiro produto para o mesmo cliente 2:
-adicionarAoCarrinho(2, 2, 4, 3);
+adicionarAoCarrinho(2, 2, 1, 1);
 
 //Exibe o valor total do carrinho do cliente 2:
 const totalCliente2 = calcularValorTotalCarrinho(2);
@@ -172,3 +171,7 @@ listarTodosPedidos();
 //Consultar o Pedido de acordo com o Id do Cliente.
 console.log("Pedido do cliente informado é: ")
 console.log(buscarPedidoPorClienteId(2));
+
+console.log("-------------------------------------------------------\n")
+console.log("\nEstoque Atualizado:\n")
+listarProdutos();
